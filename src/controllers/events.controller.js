@@ -94,7 +94,7 @@ export const deleteEvent = asyncHandler(async (req, res) => {
 
   const events = await eventsCollection();
   const event = await events.findOne({ _id: new ObjectId(id) });
-  if (!event) return res.status(404).json({ message: "Event not found." });
+  if (!event) return res.status(404).json({ message: "Event not found...." });
 
   if (event.creatorEmail !== req.user.email) {
     return res.status(403).json({ message: "You can only delete your own events." });
