@@ -16,7 +16,7 @@ export async function verifyJWT(req, res, next) {
   const header = req.headers.authorization || "";
 
   if (!header.startsWith("Bearer ")) {
-    return res.status(401).json({ message: "Unauthorized: please log in first." });
+    return res.status(401).json({ message: "Unauthorized: please log in first.." });
   }
 
   const token = header.split(" ")[1];
@@ -28,7 +28,7 @@ export async function verifyJWT(req, res, next) {
     });
 
     if (!payload.email) {
-      return res.status(401).json({ message: "Unauthorized: invalid token." });
+      return res.status(401).json({ message: "Unauthorized: invalid token.." });
     }
 
    
@@ -41,6 +41,6 @@ export async function verifyJWT(req, res, next) {
     next();
   } catch (error) {
     console.error("JWT error:", error.message);
-    return res.status(401).json({ message: "Unauthorized: your session has expired. Please log in again." });
+    return res.status(401).json({ message: "Unauthorized: your session expired. Please log in again." });
   }
 }
