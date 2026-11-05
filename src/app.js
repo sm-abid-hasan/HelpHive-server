@@ -12,7 +12,7 @@ app.use(express.json());
 
 
 app.get("/", (req, res) => {
-  res.json({ message: "HelpHive API is running." });
+  res.json({ message: "HelpHive API is running...." });
 });
 
 
