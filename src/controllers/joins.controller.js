@@ -36,7 +36,7 @@ export const joinEvent = asyncHandler(async (req, res) => {
   }
 
   await events.updateOne({ _id: event._id }, { $inc: { participantsCount: 1 } });
-  res.status(201).json({ message: "You joined the event successfully." });
+  res.status(201).json({ message: "You successfully joined the event ." });
 });
 
 
