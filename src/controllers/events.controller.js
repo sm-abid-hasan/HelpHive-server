@@ -106,5 +106,5 @@ export const deleteEvent = asyncHandler(async (req, res) => {
   const joins = await joinsCollection();
   await joins.deleteMany({ eventId: event._id });
 
-  res.json({ message: "Event deleted successfully." });
+  res.json({ message: "Event deleted successfully..." });
 });
